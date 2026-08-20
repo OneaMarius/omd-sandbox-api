@@ -1,0 +1,62 @@
+{
+  "api_metadata": {
+    "name": "OMD Sandbox API",
+    "version": "1.3.0",
+    "purpose": "A mock target server designed for testing Apigee API Gateway policies, fault handling, latency, and payload transformations.",
+    "base_path": "/omd-sandbox"
+  },
+  "capabilities": [
+    "Dynamic HTTP status code simulation.",
+    "Network latency simulation via artificial delays.",
+    "HTTP Request header reflection for Apigee Trace validation.",
+    "Automatic payload resolution based on requested status code and content type.",
+    "Request payload reflection (echo mechanism)."
+  ],
+  "endpoints": {
+    "/info": {
+      "methods": ["GET"],
+      "description": "Returns this API documentation and the complete catalog of loaded static payloads."
+    },
+    "/echo": {
+      "methods": ["ALL"],
+      "description": "Returns the exact HTTP request metadata received by the server (method, headers, query parameters, and body). Useful for verifying what Apigee forwarded."
+    },
+    "/test": {
+      "methods": ["ALL"],
+      "description": "Dynamic testing endpoint controlled by query parameters.",
+      "query_parameters": {
+        "status": {
+          "type": "integer",
+          "default": 200,
+          "description": "The HTTP status code to return. It is dynamically injected into the 'code' field of generic payloads."
+        },
+        "delay": {
+          "type": "integer",
+          "default": 0,
+          "description": "Artificial delay in milliseconds before the response is sent. Used to test timeout policies."
+        },
+        "payloadType": {
+          "type": "string",
+          "options": ["json", "xml"],
+          "default": "json",
+          "description": "Determines the format of the auto-selected payload if an explicit payload ID is not provided."
+        },
+        "payload": {
+          "type": "string",
+          "default": "undefined",
+          "description": "Overrides auto-selection. Set to a specific ID (e.g., 'json_404') to force a payload, or 'body' to echo the incoming request body."
+        },
+        "headers": {
+          "type": "boolean",
+          "default": false,
+          "description": "If set to true, request headers are reflected as HTTP response headers prefixed with 'omd-header__'."
+        }
+      },
+      "resolution_logic": "When 'payload' is not set to a specific ID or 'body', the API cascades through the catalog: Exact Match (e.g., json_404) -> Category Match (e.g., json_4xx) -> Global Fallback (e.g., json_xxx)."
+    }
+  },
+  "predefined_responses": {
+    "exact_matches": ["200", "201", "202", "400", "401", "403", "404", "405", "409", "429", "500", "501", "503", "504"],
+    "categories": ["2xx", "3xx", "4xx", "5xx", "xxx (Fallback)"]
+  }
+}
