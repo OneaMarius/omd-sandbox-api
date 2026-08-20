@@ -1,28 +1,48 @@
 {
-  "json_200": { "status": "success", "code": 200, "type": "OK", "message": "The request was processed successfully." },
-  "json_201": { "status": "success", "code": 201, "type": "Created", "message": "The resource was successfully created." },
-  "json_202": { "status": "pending", "code": 202, "type": "Accepted", "message": "The request has been accepted for processing." },
-  "json_400": { "status": "error", "code": 400, "type": "Bad Request", "message": "The request could not be understood due to malformed syntax." },
-  "json_401": { "status": "error", "code": 401, "type": "Unauthorized", "message": "Authentication failed or not provided." },
-  "json_403": { "status": "error", "code": 403, "type": "Forbidden", "message": "Insufficient permissions to access this resource." },
-  "json_404": { "status": "error", "code": 404, "type": "Not Found", "message": "The requested resource could not be found." },
-  "json_405": { "status": "error", "code": 405, "type": "Method Not Allowed", "message": "The HTTP method used is not supported for this resource." },
-  "json_409": { "status": "error", "code": 409, "type": "Conflict", "message": "The request could not be completed due to a conflict with the current state of the resource." },
-  "json_429": { "status": "error", "code": 429, "type": "Too Many Requests", "message": "Rate limit exceeded. Please try again later." },
-  "json_500": { "status": "error", "code": 500, "type": "Internal Server Error", "message": "The server encountered an unexpected condition." },
-  "json_501": { "status": "error", "code": 501, "type": "Not Implemented", "message": "The server does not support the functionality required to fulfill the request." },
-  "json_503": { "status": "error", "code": 503, "type": "Service Unavailable", "message": "The service is temporarily unavailable." },
-  "json_504": { "status": "error", "code": 504, "type": "Gateway Timeout", "message": "The gateway did not receive a timely response from the upstream server." },
-  
-  "json_2xx": { "status": "success", "code": 0, "type": "Successful", "message": "The request was successfully processed." },
-  "json_3xx": { "status": "redirect", "code": 0, "type": "Redirection", "message": "The requested resource has been moved or requires further action." },
-  "json_4xx": { "status": "error", "code": 0, "type": "Client Error", "message": "The request contains bad syntax or cannot be fulfilled." },
-  "json_5xx": { "status": "error", "code": 0, "type": "Server Error", "message": "The server failed to fulfill a valid request." },
-  "json_xxx": { "status": "unknown", "code": 0, "type": "Unknown Status", "message": "An unclassified status code was returned." },
-  
-  "xml_2xx": "<response>\n  <status>success</status>\n  <code>0</code>\n  <type>Successful</type>\n  <message>The request was successfully processed.</message>\n</response>",
-  "xml_3xx": "<response>\n  <status>redirect</status>\n  <code>0</code>\n  <type>Redirection</type>\n  <message>The requested resource has been moved or requires further action.</message>\n</response>",
-  "xml_4xx": "<response>\n  <status>error</status>\n  <code>0</code>\n  <type>Client Error</type>\n  <message>The request contains bad syntax or cannot be fulfilled.</message>\n</response>",
-  "xml_5xx": "<response>\n  <status>error</status>\n  <code>0</code>\n  <type>Server Error</type>\n  <message>The server failed to fulfill a valid request.</message>\n</response>",
-  "xml_xxx": "<response>\n  <status>unknown</status>\n  <code>0</code>\n  <type>Unknown Status</type>\n  <message>An unclassified status code was returned.</message>\n</response>"
+	"json_200": { "status": "success", "code": 200, "type": "OK", "message": "The request was processed successfully." },
+	"json_201": { "status": "success", "code": 201, "type": "Created", "message": "The resource was successfully created." },
+	"json_202": { "status": "pending", "code": 202, "type": "Accepted", "message": "The request has been accepted for processing." },
+	"json_400": { "status": "error", "code": 400, "type": "Bad Request", "message": "The request could not be understood due to malformed syntax." },
+	"json_401": { "status": "error", "code": 401, "type": "Unauthorized", "message": "Authentication failed or not provided." },
+	"json_403": { "status": "error", "code": 403, "type": "Forbidden", "message": "Insufficient permissions to access this resource." },
+	"json_404": { "status": "error", "code": 404, "type": "Not Found", "message": "The requested resource could not be found." },
+	"json_405": { "status": "error", "code": 405, "type": "Method Not Allowed", "message": "The HTTP method used is not supported for this resource." },
+	"json_409": {
+		"status": "error",
+		"code": 409,
+		"type": "Conflict",
+		"message": "The request could not be completed due to a conflict with the current state of the resource."
+	},
+	"json_429": { "status": "error", "code": 429, "type": "Too Many Requests", "message": "Rate limit exceeded. Please try again later." },
+	"json_500": { "status": "error", "code": 500, "type": "Internal Server Error", "message": "The server encountered an unexpected condition." },
+	"json_501": {
+		"status": "error",
+		"code": 501,
+		"type": "Not Implemented",
+		"message": "The server does not support the functionality required to fulfill the request."
+	},
+	"json_503": { "status": "error", "code": 503, "type": "Service Unavailable", "message": "The service is temporarily unavailable." },
+	"json_504": {
+		"status": "error",
+		"code": 504,
+		"type": "Gateway Timeout",
+		"message": "The gateway did not receive a timely response from the upstream server."
+	},
+
+	"json_2xx": { "status": "success", "code": 0, "type": "Successful", "message": "The request was successfully processed." },
+	"json_3xx": { "status": "redirect", "code": 0, "type": "Redirection", "message": "The requested resource has been moved or requires further action." },
+	"json_4xx": { "status": "error", "code": 0, "type": "Client Error", "message": "The request contains bad syntax or cannot be fulfilled." },
+	"json_5xx": { "status": "error", "code": 0, "type": "Server Error", "message": "The server failed to fulfill a valid request." },
+	"json_xxx": { "status": "unknown", "code": 0, "type": "Unknown Status", "message": "An unclassified status code was returned." },
+
+	"xml_2xx": "<response>\n  <status>success</status>\n  <code>0</code>\n  <type>Successful</type>\n  <message>The request was successfully processed.</message>\n</response>",
+	"xml_3xx": "<response>\n  <status>redirect</status>\n  <code>0</code>\n  <type>Redirection</type>\n  <message>The requested resource has been moved or requires further action.</message>\n</response>",
+	"xml_4xx": "<response>\n  <status>error</status>\n  <code>0</code>\n  <type>Client Error</type>\n  <message>The request contains bad syntax or cannot be fulfilled.</message>\n</response>",
+	"xml_5xx": "<response>\n  <status>error</status>\n  <code>0</code>\n  <type>Server Error</type>\n  <message>The server failed to fulfill a valid request.</message>\n</response>",
+	"xml_xxx": "<response>\n  <status>unknown</status>\n  <code>0</code>\n  <type>Unknown Status</type>\n  <message>An unclassified status code was returned.</message>\n</response>",
+	"soap_2xx": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soapenv:Body>\n    <response>\n      <status>success</status>\n      <code>0</code>\n      <type>Successful</type>\n      <message>The request was successfully processed.</message>\n    </response>\n  </soapenv:Body>\n</soapenv:Envelope>",
+	"soap_3xx": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soapenv:Body>\n    <response>\n      <status>redirect</status>\n      <code>0</code>\n      <type>Redirection</type>\n      <message>The requested resource has been moved.</message>\n    </response>\n  </soapenv:Body>\n</soapenv:Envelope>",
+	"soap_4xx": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soapenv:Body>\n    <response>\n      <status>error</status>\n      <code>0</code>\n      <type>Client Error</type>\n      <message>The request contains bad syntax or cannot be fulfilled.</message>\n    </response>\n  </soapenv:Body>\n</soapenv:Envelope>",
+	"soap_5xx": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soapenv:Body>\n    <response>\n      <status>error</status>\n      <code>0</code>\n      <type>Server Error</type>\n      <message>The server failed to fulfill a valid request.</message>\n    </response>\n  </soapenv:Body>\n</soapenv:Envelope>",
+	"soap_xxx": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soapenv:Body>\n    <response>\n      <status>unknown</status>\n      <code>0</code>\n      <type>Unknown Status</type>\n      <message>An unclassified status code was returned.</message>\n    </response>\n  </soapenv:Body>\n</soapenv:Envelope>"
 }

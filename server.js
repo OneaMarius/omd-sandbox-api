@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.text({ type: ['text/xml', 'application/xml', 'text/plain'] }));
 
-// Mount the router to the specified base path
-app.use('/omd-sandbox', sandboxRoutes);
+// Mount routes directly at the root level (foarte important)
+app.use('/', sandboxRoutes);
 
 // Start the server
 app.listen(PORT, () => {
