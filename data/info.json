@@ -10,7 +10,7 @@
       "methods": ["ALL"],
       "description": "The only endpoint of the API. Its behavior is dictated by the 'omd_mode' parameter. Any path is accepted.",
       "query_parameters": {
-        "omd_mode": "Defines the core behavior: 'info' (returns documentation), 'echo' (returns request metadata), or 'test' (dynamic mocking). Default: 'test'.",
+        "omd_mode": "Defines the core behavior: 'info' (returns documentation), 'echo' (returns request metadata), or 'test' (dynamic mocking). Default: 'info'.",
         "omd_status": "Target HTTP status code. Default: 200.",
         "omd_delay": "Response delay in milliseconds. Default: 0.",
         "omd_payloadType": "Response format ('json', 'xml', or 'soap'). Default: json.",
